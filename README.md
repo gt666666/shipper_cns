@@ -11,6 +11,7 @@
 * 统计图插件: cnpm install  --save  echarts
 * node-sass安装: cnpm  install  node-sass  --save-dev   
 * sass-loader安装:  cnpm  install  sass-loader@7.3.1  --save-dev
+* js-cookie安装: cnpm install js-cookie --save
 * node_modules安装:  cnpm  install
 
 ##项目打包管理

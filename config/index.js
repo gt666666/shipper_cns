@@ -11,13 +11,13 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/': { // 所有以“/api”开头的访问都为跨域访问
-        target: 'http://127.0.0.1:9000', // 服务器地址
-        changeOrigin: true, // 是否跨域
-        pathRewrite: {  // 进行重写
-          '^/':''
-        }
-      }
+      // '/': {
+      //   target: 'http://192.168.27.128:9000', // 服务器地址
+      //   changeOrigin: true, // 是否跨域
+      //   pathRewrite: {  // 进行重写
+      //     '^/':''
+      //   }
+      // }
     },
 
     // Various Dev Server settings

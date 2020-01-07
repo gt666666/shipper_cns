@@ -1,7 +1,7 @@
 <template>
   <div class="home">
   <el-container >
-    <el-aside  style=" width: 220px;border-right:#409EFF;border-right-style: solid;border-right-width:2px  " >
+    <el-aside  style=" width: 210px;border-right:#409EFF;border-right-style: solid;border-right-width:2px  " >
       <Slidebar/>
     </el-aside>
 
