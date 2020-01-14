@@ -30,8 +30,6 @@
 <script>
   import {mapGetters, mapActions} from 'vuex' // 导入所有的getters、actions操作
   import {setToken, getToken} from '@/utils/cookie.js'
-  import {login} from '@/api/article'
-
   export default {
     data () {
       return {

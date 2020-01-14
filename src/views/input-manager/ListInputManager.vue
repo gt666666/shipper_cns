@@ -14,13 +14,14 @@
           &nbsp;&nbsp;&nbsp;&nbsp;
           <el-button type="primary" @click="getList">查询</el-button>
           <el-button @click="resetSearchForm">重置</el-button>
+          <el-button @click="export2Excel">导出</el-button>
         </el-form>
       </el-collapse-item>
     </el-collapse>
     <el-table
       :data="tableData"
       border
-      style="width: 100%">
+      style="width: 100%" id="table-content">
       <el-table-column
         label="日期"
         width="150" fixed align="center">
@@ -238,18 +239,9 @@
             <el-radio label="女">女</el-radio>
           </el-radio-group>
         </el-form-item>
+
         <el-form-item label="头像" prop="gender">
-          <!--          <div lass="demo-fit">-->
-          <!--            <el-avatar shape="square" :size="100" src="F://image//证件照.jpg"></el-avatar>-->
-          <!--          </div>-->
-          <!--          <div class="demo-fit">-->
-
-
-          <el-avatar shape="square" :size="100" src="../../assets/images/user.png"></el-avatar>
-
-          <!--          </div>-->
-          <!--          <img src="../../assets/images/user.png">-->
-
+          <el-image  style="width: 150px;height: 150px" :src="ruleForm.img"></el-image>
         </el-form-item>
 
         <el-form-item label="备注" prop="remark">
@@ -308,6 +300,35 @@
       }
     },
     methods: {
+     //导出的方法
+     //  exportExcel() {
+     //    require.ensure([], () => {
+     //      const { export_json_to_excel } = require('../../assets/js/Export2Excel');
+     //      const tHeader = ['姓名', '生日', '兴趣爱好'];
+     //      // 上面设置Excel的表格第一行的标题
+     //      const filterVal = ['name', 'birthday', 'hobbys'];
+     //      // 上面的index、nickName、name是tableData里对象的属性
+     //      const list = this.tableData;  //把data里的tableData存到list
+     //      const data = this.formatJson(filterVal, list);
+     //      export_json_to_excel(tHeader, data, '列表excel');
+     //    })
+     //  },
+
+      export2Excel() {
+        require.ensure([], () => {
+          let { exportJsonToExcel } = require('../../assets/js/excel/Export2Excel');
+          // 表头
+          let tHeader = ['姓名', '生日', '兴趣爱好','学历'];
+          //表头对应字段名，要和下面数据key对应
+          let filterVal = ['name', 'birthday', 'hobby','education'];
+          let data = this.formatJson(filterVal, this.tableData); //数据格式化
+          exportJsonToExcel(tHeader, data, '表名'); //导出文件
+        })
+      },
+      // 数据格式化
+      formatJson(filterVal, jsonData){
+        return jsonData.map(v => filterVal.map(j => v[j]))
+      },
       getList () {
         this.$http.get('/findByQuery', {
           params: {
@@ -363,7 +384,6 @@
           hobb[i] = hobby[i]
         }
         this.ruleForm = Object.assign({}, val)
-        console.log(this.ruleForm)
         this.ruleForm.hobbys = hobb
       },
       handleDelete (id) {

@@ -23,7 +23,6 @@ router.beforeEach(async (to, from, next) => {
         router.addRoutes(accessRoutes)  //动态路由
         next({...to})
       } catch (error) {
-        //token失效
         next({path: '/login'})
       }
     }

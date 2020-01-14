@@ -13,10 +13,12 @@ import store from './store' // 引入Vue对象
 //阿里巴巴字体
 import  './assets/css/iconfont/iconfont.js'
 import  './assets/css/iconfont/icon.css'
+import Print from 'vue-print-nb'   //打印插件
+Vue.use(Print);
 Vue.use(ElementUI)
 Vue.config.productionTip = false // 阻止生产模式的消息
 Vue.prototype.$http = axios;
-axios.defaults.baseURL = 'http://127.0.0.1:9000/'
+axios.defaults.baseURL = 'http://192.168.27.128:9000/'
 axios.defaults.headers['token']= store.state.token
 Vue.prototype.$qs = qs;
 new Vue({

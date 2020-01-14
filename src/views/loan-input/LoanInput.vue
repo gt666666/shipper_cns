@@ -1,4 +1,5 @@
 <template>
+  <div>
   <el-row :gutter="20">
     <el-form :inline="true" :rules="rules" ref="formInline" :model="formInline" class="demo-form-inline">
       <el-col :lg="6" :md="12" :xs="24">
@@ -66,26 +67,12 @@
     </el-form>
   </el-row>
 
-  <!--  <el-form :inline="true" :rules="rules" ref="formInline" :model="formInline" class="demo-form-inline">-->
-
-  <!--    <el-form-item label="姓名" prop="name">-->
-  <!--      <el-input v-model="formInline.name" placeholder="姓名"></el-input>-->
-  <!--    </el-form-item>-->
-
-  <!--    <el-form-item label="身份证号" prop="idNumber">-->
-  <!--      <el-input v-model="formInline.idNumber" placeholder="身份证号"></el-input>-->
-  <!--    </el-form-item>-->
-
-  <!--    <el-form-item label="年龄" prop="age">-->
-  <!--      <el-input v-model="formInline.age" placeholder="年龄"></el-input>-->
-  <!--    </el-form-item>-->
-
-  <!--    <el-form-item label="注册日期" prop="date1">-->
-  <!--      <el-date-picker type="date" placeholder="选择日期" v-model="formInline.date1" style="width: 100%;"></el-date-picker>-->
-  <!--    </el-form-item>-->
-
-
-  <!--  </el-form>-->
+  <div id="printTest" >
+    　　　　　　<p>明月照于山间</p>
+    　　　　　　<p>清风来于江上 </p>
+    　　　　</div>
+  　　　　<button v-print="'#printTest'">打印</button>
+  </div>
 </template>
 <script>
   export default {

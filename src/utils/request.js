@@ -1,11 +1,10 @@
 import axios from 'axios'
-import { Message } from 'element-ui'
 import { getToken } from '@/utils/cookie'
 
 // axios.defaults.withCredentials=true
 
 const service = axios.create({
-  baseURL: 'http://127.0.0.1:9000/',
+  baseURL: 'http://192.168.27.128:9000/',
   withCredentials:  false // 允许携带cookie
 })
 

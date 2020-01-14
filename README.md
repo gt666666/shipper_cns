@@ -12,6 +12,9 @@
 * node-sass安装: cnpm  install  node-sass  --save-dev   
 * sass-loader安装:  cnpm  install  sass-loader@7.3.1  --save-dev
 * js-cookie安装: cnpm install js-cookie --save
+* 打印插件安装:  cnpm install vue-print-nb --save
+* 表格导出插件: cnpm install -S file-saver xlsx  |  cnpm install -D script-loader     将js挂在在全局下
+* xlsx:电子表格格式的解析器    file-saver:用来生成文件的web应用程序
 * node_modules安装:  cnpm  install
 
 ##项目打包管理
