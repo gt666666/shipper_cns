@@ -13,5 +13,5 @@ export default {
   },
   [Types.INFO] (state, val) {// 登录用户信息
     state.info = val
-  },
+  }
 }

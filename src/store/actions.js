@@ -4,15 +4,16 @@ import {getToken} from '@/utils/cookie'
 import {getRoles} from '@/api/article'
 
 export default {
-  setTokenAction ({commit}, newValue) {  //设置token
+  setTokenAction({commit}, newValue) {  //设置token
     commit(Types.TOKEN, newValue)
   },
-  setRoles ({commit}, newValue) {     //设置角色
+  setRolesAction ({commit}, newValue) {     //设置角色
     commit(Types.ROLES, newValue)
   },
-  setInfo ({commit}, newValue) {     //设置登录用户信息
+  setInfoAction ({commit}, newValue) {     //设置登录用户信息
     commit(Types.INFO, newValue)
   },
+
   GenerateRoutes ({commit}, roles) { // 角色数组['']
     return new Promise(resolve => {
       let accessedRoutes

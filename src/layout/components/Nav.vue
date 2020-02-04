@@ -35,7 +35,7 @@
     },
 
     methods: {
-      ...mapActions(['setTokenAction', 'setRoles']),
+      ...mapActions(['setTokenAction', 'setRolesAction']),
       getRouter () {
         if (this.$route.matched.length === 1) {
           this.title = this.$route.matched[0].meta.title
@@ -48,11 +48,11 @@
       },
       logout () {
         this.$confirm('是否退出?', '提示', {
-          confirmButtonText: '确定',
           cancelButtonText: '取消',
+          confirmButtonText: '确定',
           type: 'warning'
         }).then(() => {
-          this.setRoles([])
+          this.setRolesAction([])
           this.setTokenAction('')
           this.$router.push('/login');
           this.$message({

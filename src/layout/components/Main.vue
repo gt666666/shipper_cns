@@ -59,7 +59,6 @@
     created () {
       this.getRouter()
     },
-
     watch: {
       $route (to, from) {  //监听路由变化
         this.getRouter()

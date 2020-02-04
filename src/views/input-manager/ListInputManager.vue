@@ -241,7 +241,7 @@
         </el-form-item>
 
         <el-form-item label="头像" prop="gender">
-          <el-image  style="width: 150px;height: 150px" :src="ruleForm.img"></el-image>
+          <el-image  style="width: 150px;height: 150px" src="F:/image/timg1.jpg"></el-image>
         </el-form-item>
 
         <el-form-item label="备注" prop="remark">
